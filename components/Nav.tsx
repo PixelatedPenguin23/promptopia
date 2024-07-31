@@ -18,7 +18,7 @@ const Nav = () => {
 
 
   return (
-    <nav className='bg-blue-800 flex fixed top-0 w-full overflow-hidden h-16 flex-row justify-between items-center'>
+    <nav className=' flex fixed top-0 w-full overflow-hidden h-16 flex-row justify-between items-center'>
       <Link href='/' className='m-2 p-2'>
         <Image
         src='assets/images/logo.svg'
@@ -36,6 +36,8 @@ const Nav = () => {
         Sign in
       </button>
       ))}
+
+      
       
 
     </nav>

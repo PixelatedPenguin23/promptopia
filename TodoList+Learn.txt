@@ -1,0 +1,32 @@
+@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@
+
+@ ctrl shift w = close all/ ctrl w= new file/ctrl a=new folder
+@import { SessionProvider } from "next-auth/react";
+@useeffect vase usestate be kar mire
+
+@@
+{providers &&
+      Object.values(providers).map((provider)=>(
+      <button className='bg-orange-600 rounded-xl p-1 h-9 w-20 mx-2 font-mono hover:bg-black hover:text-white transition-all'>
+        Sign in
+      </button>
+      ))}
+
+@@
+This command removes all files from the staging area:
+
+Bash
+git reset HEAD --soft
+
+If you want to completely discard all changes and revert your repository to the state of the previous commit, use:
+
+Bash
+git reset --hard HEAD
+
+Remove the .git directory:
+Bash
+rm -rf .git

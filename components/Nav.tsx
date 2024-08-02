@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
 
 const Nav = () => {
   const {data:session}=useSession()
-  const [toggle,setToggle]=useState(true)
+  const [toggle,setToggle]=useState(false)
   const [providers,setProviders]=useState(null)
 
   
@@ -21,20 +21,21 @@ const Nav = () => {
 
 
   return (
-    <nav className=' flex fixed top-0 w-full  h-16 flex-row justify-between items-center'>
-      <Link href='/' className='m-2 p-2'>
+    <nav className=' flex fixed top-0 w-full  h-16 flex-row justify-between items-center md:px-10'>
+      <Link href='/' className='m-2 p-2 flex flex-row items-center'>
         <Image
         src='assets/images/logo.svg'
         height={34}
         width={34}
         alt='logo'/>
+        <span className='text-white mx-1 text-sm md:flex hidden'>Promptoopia</span>
       </Link>
 
       
       
-      {/**desktop */}
+      {/**desktop XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */}
 
-      {session?.user ?(
+      {lg ?(
       <div className='mx-2 flex-row text-center items-center justify-between md:flex hidden'>
         <Link href='/create' className='h-8 flex flex-col items-center justify-center bg-orange-600 rounded-xl text-lg w-32 mx-1 font-mono hover:bg-black
          hover:text-white transition-all '>
@@ -48,7 +49,7 @@ const Nav = () => {
         <Link href='/profile'>
         <Image className='rounded-full mx-1 hover:opacity-35 transition-all'
         onClick={()=>{setToggle(!toggle)}}
-        src={session.user.image}
+        src={'assets/images/logo.svg'}
         width={30}
         height={30}
         alt='Profile'/>
@@ -68,7 +69,7 @@ const Nav = () => {
       ))}
       </div>)}
 
-      {/**pHONE */}
+      {/**pHONE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/}
       
       {lg ?(
       <div className='mx-2 flex-row text-center items-center justify-between max-md:flex hidden'>
@@ -94,9 +95,10 @@ const Nav = () => {
       </div>)
       
       }
+      {/**sssssssssssssssssssssssss */}
       {
         toggle &&
-        <div className='absolute flex flex-col bg-blue-300 top-16 right-16 min-w-fit w-20 h-2 text-white'>
+        <div className='absolute flex flex-col top-16 right-16 min-w-fit w-20 h-26 m-auto  min-h-fit text-center md:hidden rounded-lg bg-orange-600 text-black p-3 '>
           
           <Link href='/profile'>
           Profile

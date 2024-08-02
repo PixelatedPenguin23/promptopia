@@ -36,3 +36,15 @@ return if statement to not make a loop
 useUnifiedTopology:true,
       useNewUrlParser:true
 @@@@@@@
+  useEffect(()=>{
+    const SetUp=async ()=>{
+      const response=await getProviders()
+      setProviders(response)
+    }
+    SetUp()
+  },[])
+
+  ###await bayad bezari ke yebar ejra she
+  @@@@@@@
+
+https://cloud.mongodb.com/v2/66978c9a287d9c09a21f6d7a#/clusters/detail/Cluster0

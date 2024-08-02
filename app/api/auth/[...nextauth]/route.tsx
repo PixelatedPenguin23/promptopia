@@ -21,7 +21,7 @@ const handler=NextAuth({
         const userExists=await User.findOne({email:profile.email})
         if (!userExists){
           await User.create({
-            username:profile.name._id.replace(" ","").toLowerCase(),
+            username:profile.name.replace(" ","").toLowerCase(),
             image:profile.picture,
             email:profile.email
           })
@@ -30,7 +30,7 @@ const handler=NextAuth({
     },
     async session({session}){
       const lastName=await User.findOne({email:session.user.email})
-      session.user.id=lastName.toString()
+      session.user.id=lastName._id.toString()
       return session
     }
   }

@@ -10,18 +10,21 @@ const Nav = () => {
   const [providers,setProviders]=useState(null)
 
   
+  
   useEffect(()=>{
-    (async()=>{
-      const res=getProviders()
-      setProviders(res)
-    })(),[]
-  })
+    const SetUp=async ()=>{
+      const response=await getProviders()
+      setProviders(response)
+    }
+    SetUp()
+  },[])
+  
 
   const lg=true
 
 
   return (
-    <nav className=' flex fixed top-0 w-full  h-16 flex-row justify-between items-center md:px-10'>
+    <nav className=' flex fixed top-0 w-full  h-16 flex-row justify-between items-center md:px-10' >
       <Link href='/' className='m-2 p-2 flex flex-row items-center'>
         <Image
         src='assets/images/logo.svg'
@@ -35,7 +38,7 @@ const Nav = () => {
       
       {/**desktop XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */}
 
-      {lg ?(
+      {session?.user ?(
       <div className='mx-2 flex-row text-center items-center justify-between md:flex hidden'>
         <Link href='/create' className='h-8 flex flex-col items-center justify-center bg-orange-600 rounded-xl text-lg w-32 mx-1 font-mono hover:bg-black
          hover:text-white transition-all '>
@@ -49,7 +52,7 @@ const Nav = () => {
         <Link href='/profile'>
         <Image className='rounded-full mx-1 hover:opacity-35 transition-all'
         onClick={()=>{setToggle(!toggle)}}
-        src={'assets/images/logo.svg'}
+        src={session.user.image}
         width={30}
         height={30}
         alt='Profile'/>
@@ -71,11 +74,11 @@ const Nav = () => {
 
       {/**pHONE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/}
       
-      {lg ?(
+      {session?.user ?(
       <div className='mx-2 flex-row text-center items-center justify-between max-md:flex hidden'>
         <Image className='rounded-full mx-1 hover:opacity-35 transition-all'
         onClick={()=>{setToggle(!toggle)}}
-        src={'assets/images/logo.svg'}
+        src={session.user.image}
         width={30}
         height={30}
         alt='Profile'/>
@@ -106,7 +109,7 @@ const Nav = () => {
           <Link href='/create'>
           Create Post
           </Link>
-          <button>
+          <button onClick={()=>{signOut()}}>
             Sign Out
           </button>
         </div>

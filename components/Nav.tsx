@@ -24,7 +24,7 @@ const Nav = () => {
 
 
   return (
-    <nav className=' flex fixed top-0 w-full  h-16 flex-row justify-between items-center md:px-10' >
+    <nav className='backdrop-filter backdrop-blur-3xl  flex fixed top-0 w-full  h-16 flex-row justify-between items-center md:px-10' >
       <Link href='/' className='m-2 p-2 flex flex-row items-center'>
         <Image
         src='assets/images/logo.svg'
@@ -40,7 +40,7 @@ const Nav = () => {
 
       {session?.user ?(
       <div className='mx-2 flex-row text-center items-center justify-between md:flex hidden'>
-        <Link href='/create' className='h-8 flex flex-col items-center justify-center bg-orange-600 rounded-xl text-lg w-32 mx-1 font-mono hover:bg-black
+        <Link href='/create-prompt' className='h-8 flex flex-col items-center justify-center bg-orange-600 rounded-xl text-lg w-32 mx-1 font-mono hover:bg-black
          hover:text-white transition-all '>
         Create Post
         </Link>
@@ -106,7 +106,7 @@ const Nav = () => {
           <Link href='/profile'>
           Profile
           </Link>
-          <Link href='/create'>
+          <Link href='/create-prompt'>
           Create Post
           </Link>
           <button onClick={()=>{signOut()}}>

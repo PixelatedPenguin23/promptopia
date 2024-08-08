@@ -1,65 +1,7 @@
-@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@
-
-@ ctrl shift w = close all/ ctrl w= new file/ctrl a=new folder
-@import { SessionProvider } from "next-auth/react";
-@useeffect vase usestate be kar mire
-
-@@
-{providers &&
-      Object.values(providers).map((provider)=>(
-      <button className='bg-orange-600 rounded-xl p-1 h-9 w-20 mx-2 font-mono hover:bg-black hover:text-white transition-all'>
-        Sign in
-      </button>
-      ))}
-
-@@
-This command removes all files from the staging area:
-
-Bash
-git reset HEAD --soft
-
-If you want to completely discard all changes and revert your repository to the state of the previous commit, use:
-
-Bash
-git reset --hard HEAD
-
-Remove the .git directory:
-Bash
-rm -rf .git
-@@@@@@@@@
-return if statement to not make a loop
-@@@@@@
-useUnifiedTopology:true,
-      useNewUrlParser:true
-@@@@@@@
-  useEffect(()=>{
-    const SetUp=async ()=>{
-      const response=await getProviders()
-      setProviders(response)
-    }
-    SetUp()
-  },[])
-
-  ###await bayad bezari ke yebar ejra she
-  @@@@@@@
-
+setTimeout(()=>setcopied(""),3000)
 https://cloud.mongodb.com/v2/66978c9a287d9c09a21f6d7a#/clusters/detail/Cluster0
 
-@@@##GITHUB/**/
-To return a specific folder in your local repository to its latest state on GitHub, you'll need to follow these steps:
-
-Fetch the latest changes from the remote repository: This ensures that your local repository has the most recent changes from GitHub.
-
-bash
-Copy code
-git fetch origin
-Checkout the latest version of the folder from the remote branch: This step updates the specific folder to its state on the remote repository. Replace main with the name of the branch you are working with if it's different.
-
-bash
-Copy code
+$git fetch origin
 git checkout origin/main -- path/to/folder
-@@@@@@@@@@
+
+$
